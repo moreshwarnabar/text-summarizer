@@ -28,9 +28,11 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
     BoxValueError
         If the YAML file cannot be read.
     """
-    with open(path_to_yaml, 'r', encoding='utf-8') as f:
+    with open(path_to_yaml) as f:
         try:
-            return ConfigBox(yaml.safe_load(f))
+            content = yaml.safe_load(f)
+            logger.info(f"yaml file: {path_to_yaml} loaded successfully")
+            return ConfigBox(content)
         except yaml.YAMLError as e:
             raise BoxValueError(e) from e
         
