@@ -4,6 +4,8 @@ import torch
 import pandas as pd
 from tqdm import tqdm
 
+from text_summarizer.entity import ModelEvaluationConfig
+
 class ModelEvaluation:
     def __init__(self, config: ModelEvaluationConfig):
         self.config = config
