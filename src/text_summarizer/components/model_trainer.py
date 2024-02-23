@@ -42,7 +42,7 @@ class ModelTrainer:
             args=trainer_args,
             tokenizer=tokenizer,
             data_collator=seq2seq_data_collator,
-            train_dataset=dataset_pt['test'],
+            train_dataset=dataset_pt['train'],
             eval_dataset=dataset_pt['validation'],
         )
         trainer.train()
